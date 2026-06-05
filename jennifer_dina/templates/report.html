@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Final Report</title>
+</head>
+<body class="bg-emerald-50 py-10">
+    <div class="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-emerald-900">Academic Report</h1>
+        <p class="text-slate-600 mb-8">System: <strong>{{ system }}</strong> | Student: <strong>{{ name }}</strong></p>
+
+        <table class="w-full mb-8 text-left border-collapse">
+            <thead><tr class="border-b"><th>Subject</th><th>Grade</th><th>GPA Points</th></tr></thead>
+            <tbody>
+                {% for item in report %}
+                <tr class="border-b"><td class="py-3">{{ item.subject }}</td><td class="py-3">{{ item.grade }}</td><td class="py-3">{{ item.gp }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="bg-emerald-900 text-white p-6 rounded-2xl text-center">
+            <p>Final Calculated GPA</p>
+            <h2 class="text-5xl font-extrabold">{{ gpa }}</h2>
+        </div>
+
+        <p class="mt-8 text-center text-slate-600 italic">"Amazing work! Your dedication to your studies is truly inspiring. Keep pushing forward!"</p>
+    </div>
+</body>
+</html>
